@@ -9,6 +9,14 @@ document.getElementById('emailLink').addEventListener('click', function (e) {
   location.href = 'mailto:' + EMAIL_USER + '@' + EMAIL_DOMAIN + '?subject=Tutoring';
 });
 
+/* Visible email text, injected at load so it never appears in the raw HTML */
+const emailText = document.getElementById('emailText');
+emailText.textContent = EMAIL_USER + '@' + EMAIL_DOMAIN;
+emailText.addEventListener('click', function (e) {
+  e.preventDefault();
+  location.href = 'mailto:' + EMAIL_USER + '@' + EMAIL_DOMAIN + '?subject=Tutoring';
+});
+
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 navToggle.addEventListener('click', () => nav.classList.toggle('open'));
@@ -24,7 +32,7 @@ const I18N = {
     'nav.subjects': 'Subjects',
     'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact',
-    'hero.title': 'Aidan Chan',
+    'hero.kicker': 'Tutoring — Montréal',
     'hero.sub': 'Math, science, and French tutoring for Secondary 1–5 students in Montreal.',
     'hero.cta': 'Get in touch',
     'hero.photo': 'Your photo',
@@ -53,7 +61,7 @@ const I18N = {
     'nav.subjects': 'Matières',
     'nav.testimonials': 'Témoignages',
     'nav.contact': 'Contact',
-    'hero.title': 'Aidan Chan',
+    'hero.kicker': 'Tutorat — Montréal',
     'hero.sub': 'Tutorat en mathématiques, sciences et français pour les élèves du secondaire 1 à 5 à Montréal.',
     'hero.cta': 'Me joindre',
     'hero.photo': 'Votre photo',
