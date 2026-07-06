@@ -3,113 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Your Name] Tutoring</title>
+<title>[Your Name] — Tutoring</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#home" class="brand">[Your Name] Tutoring</a>
+    <a href="#home" class="brand">[Your Name]</a>
     <nav class="nav" id="nav">
-      <a href="#about">About</a>
-      <a href="#subjects">Subjects &amp; Pricing</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#subjects" data-i18n="nav.subjects">Subjects</a>
+      <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">FR</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
   </div>
 </header>
 
 <section id="home" class="hero">
   <div class="wrap hero-inner">
-    <div class="hero-photo" aria-hidden="true">
-      <!-- Replace this div's background in styles.css, or swap for <img src="images/your-photo.jpg" alt="Your Name"> -->
-      <span>Your Photo</span>
-    </div>
     <div class="hero-text">
-      <h1>Hi, I'm [Your Name].</h1>
-      <p class="hero-sub">I help students build confidence and skills in [subjects], one session at a time.</p>
-      <a href="#contact" class="btn btn-primary">Book a Free Intro Call</a>
+      <h1 data-i18n="hero.title">[Your Name]</h1>
+      <p class="hero-sub" data-i18n="hero.sub">[One plain sentence: what you tutor, for whom, and where. e.g. "Math and science tutoring for high school and CEGEP students in Montreal — in person or online."]</p>
+      <a href="#contact" class="btn" data-i18n="hero.cta">Get in touch</a>
+    </div>
+    <div class="hero-photo">
+      <!-- Swap for: <img src="images/your-photo.jpg" alt="[Your Name]"> -->
+      <span data-i18n="hero.photo">Your photo</span>
     </div>
   </div>
 </section>
 
 <section id="about" class="section">
-  <div class="wrap">
-    <h2>About Me</h2>
-    <p>
-      [Placeholder bio — 2 to 4 sentences. Example: "I'm a [credential/degree] with [X years] of experience
-      tutoring [subjects] for students in [grade levels]. My approach is patient, personalized, and focused on
-      building real understanding, not just memorization. I've helped students raise grades, prep for exams like
-      the SAT/ACT, and rediscover their love of learning."]
-    </p>
+  <div class="wrap narrow">
+    <h2 data-i18n="about.title">About</h2>
+    <p data-i18n="about.bio">[Placeholder bio — 2 to 4 sentences, written the way you'd actually say it. Example: "I'm a CEGEP student in health science and I've been tutoring math for three years. I mostly work with high schoolers who feel behind — my goal is that you understand the material well enough to not need me anymore."]</p>
     <ul class="credentials">
-      <li>[Credential or degree]</li>
-      <li>[Years of experience]</li>
-      <li>[Certification, if any]</li>
+      <li data-i18n="about.cred1">[Credential or program]</li>
+      <li data-i18n="about.cred2">[Years of experience]</li>
+      <li data-i18n="about.cred3">[Languages: English &amp; French]</li>
     </ul>
   </div>
 </section>
 
 <section id="subjects" class="section section-alt">
-  <div class="wrap">
-    <h2>Subjects &amp; Pricing</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>[Subject 1, e.g. Math]</h3>
-        <p>[Grade levels, e.g. Grades 6–12, Algebra through Calculus]</p>
-        <p class="price">$[XX] / hour</p>
-      </div>
-      <div class="card">
-        <h3>[Subject 2, e.g. Science]</h3>
-        <p>[Grade levels]</p>
-        <p class="price">$[XX] / hour</p>
-      </div>
-      <div class="card">
-        <h3>[Subject 3, e.g. Test Prep]</h3>
-        <p>[SAT / ACT / other]</p>
-        <p class="price">$[XX] / hour</p>
-      </div>
-    </div>
-    <p class="note">[Optional note: package discounts, first session free, online or in-person, etc.]</p>
+  <div class="wrap narrow">
+    <h2 data-i18n="subjects.title">Subjects</h2>
+    <ul class="subject-list">
+      <li>
+        <strong data-i18n="subj1.name">[Subject 1, e.g. Math]</strong>
+        <span data-i18n="subj1.desc">[Levels — e.g. Secondary 1–5, Sec 4/5 math, CEGEP calculus]</span>
+      </li>
+      <li>
+        <strong data-i18n="subj2.name">[Subject 2, e.g. Science]</strong>
+        <span data-i18n="subj2.desc">[Levels — e.g. physics and chemistry, Sec 4–5]</span>
+      </li>
+      <li>
+        <strong data-i18n="subj3.name">[Subject 3, e.g. French / English]</strong>
+        <span data-i18n="subj3.desc">[Levels — e.g. essay help, exam prep]</span>
+      </li>
+    </ul>
+    <p class="note" data-i18n="subjects.note">[Optional: "Rates and availability on request — send me a message." Or session format: online / in person / where.]</p>
   </div>
 </section>
 
 <section id="testimonials" class="section">
-  <div class="wrap">
-    <h2>What Students &amp; Parents Say</h2>
-    <div class="cards">
-      <blockquote class="testimonial">
-        <p>"[Placeholder testimonial quote about improvement, patience, or results.]"</p>
-        <cite>— [Student/Parent Name]</cite>
-      </blockquote>
-      <blockquote class="testimonial">
-        <p>"[Placeholder testimonial quote.]"</p>
-        <cite>— [Student/Parent Name]</cite>
-      </blockquote>
-      <blockquote class="testimonial">
-        <p>"[Placeholder testimonial quote.]"</p>
-        <cite>— [Student/Parent Name]</cite>
-      </blockquote>
-    </div>
+  <div class="wrap narrow">
+    <h2 data-i18n="testi.title">Testimonials</h2>
+    <blockquote class="testimonial">
+      <p data-i18n="t1.quote">"[Real quote from a student or parent — with their permission.]"</p>
+      <cite data-i18n="t1.cite">— [First name, context: e.g. parent of a Sec 4 student]</cite>
+    </blockquote>
+    <blockquote class="testimonial">
+      <p data-i18n="t2.quote">"[Second testimonial.]"</p>
+      <cite data-i18n="t2.cite">— [First name]</cite>
+    </blockquote>
   </div>
 </section>
 
 <section id="contact" class="section section-alt">
-  <div class="wrap contact-inner">
-    <h2>Get in Touch</h2>
-    <p>Ready to get started, or have a question? Reach out below.</p>
+  <div class="wrap narrow">
+    <h2 data-i18n="contact.title">Contact</h2>
+    <p data-i18n="contact.sub">[How you prefer to be reached and how fast you usually reply. e.g. "Email or text me — I usually answer the same day."]</p>
     <div class="contact-methods">
-      <a class="btn btn-primary" href="mailto:youremail@example.com?subject=Tutoring%20Inquiry">Email Me</a>
-      <a class="btn btn-secondary" href="tel:+10000000000">Call / Text [Your Phone]</a>
+      <a class="btn" href="mailto:youremail@example.com?subject=Tutoring" data-i18n="contact.email">Email me</a>
+      <a class="btn btn-quiet" href="tel:+10000000000" data-i18n="contact.call">Call or text</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; <span id="year"></span> [Your Name] Tutoring. All rights reserved.</p>
+    <p>© <span id="year"></span> [Your Name]<span data-i18n="footer.tail"> — Tutoring</span></p>
   </div>
 </footer>
 
