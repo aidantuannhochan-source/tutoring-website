@@ -1,5 +1,14 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* Email address assembled at click time so harvesting bots that scan the
+   raw HTML/JS for mailto: or user@domain patterns never see it. */
+const EMAIL_USER = 'youremail';   // part before the @
+const EMAIL_DOMAIN = 'example.com';
+document.getElementById('emailLink').addEventListener('click', function (e) {
+  e.preventDefault();
+  location.href = 'mailto:' + EMAIL_USER + '@' + EMAIL_DOMAIN + '?subject=Tutoring';
+});
+
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 navToggle.addEventListener('click', () => nav.classList.toggle('open'));
@@ -38,9 +47,8 @@ const I18N = {
     't2.quote': '"[Second testimonial.]"',
     't2.cite': '— [First name]',
     'contact.title': 'Contact',
-    'contact.sub': '[How you prefer to be reached and how fast you usually reply.]',
+    'contact.sub': '[e.g. "Send me an email — I usually answer the same day."]',
     'contact.email': 'Email me',
-    'contact.call': 'Call or text',
     'footer.tail': ' — Tutoring'
   },
   fr: {
@@ -71,9 +79,8 @@ const I18N = {
     't2.quote': '« [Deuxième témoignage.] »',
     't2.cite': '— [Prénom]',
     'contact.title': 'Contact',
-    'contact.sub': '[Comment vous joindre et votre délai de réponse habituel.]',
+    'contact.sub': '[p. ex. « Écrivez-moi un courriel — je réponds habituellement le jour même. »]',
     'contact.email': 'M’écrire',
-    'contact.call': 'Appeler ou texter',
     'footer.tail': ' — Tutorat'
   }
 };

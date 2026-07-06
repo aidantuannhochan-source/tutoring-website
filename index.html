@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <title>[Your Name] — Tutoring</title>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -88,10 +90,9 @@
 <section id="contact" class="section section-alt">
   <div class="wrap narrow">
     <h2 data-i18n="contact.title">Contact</h2>
-    <p data-i18n="contact.sub">[How you prefer to be reached and how fast you usually reply. e.g. "Email or text me — I usually answer the same day."]</p>
+    <p data-i18n="contact.sub">[e.g. "Send me an email — I usually answer the same day."]</p>
     <div class="contact-methods">
-      <a class="btn" href="mailto:youremail@example.com?subject=Tutoring" data-i18n="contact.email">Email me</a>
-      <a class="btn btn-quiet" href="tel:+10000000000" data-i18n="contact.call">Call or text</a>
+      <a class="btn" id="emailLink" href="#contact" data-i18n="contact.email">Email me</a>
     </div>
   </div>
 </section>
